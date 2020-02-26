@@ -4,7 +4,7 @@
 // quando finisce bisogna stampare il numero di volte che si è inserito il numero
 
 var numeriRandom = [];
-var numeroTenativi = []
+var numeroTenativi = [];
 
 for (var i = 0; i < 16; i++) {
 var numeroRandom = numeriRandom.push(generaRandom(1,100))
@@ -15,10 +15,22 @@ console.log(numeriRandom);
 
 
 for (var i = 0; i < 83; i++) {
-var tentativo = numeroTenativi.push(parseInt(prompt('scrivi un numero')))
+var tentativo = parseInt(prompt('scrivi un numero'));
+
+console.log(numeroTenativi);
+console.log(tentativo);
 if (!numeriRandom.includes(tentativo)) {
+
+
+
     if (!numeroTenativi.includes(tentativo)) {
+        numeroTenativi.push(tentativo);
         console.log('scegli altro numero');
+
+    }
+    else {
+        
+        console.log('numero ripetuto');
 
     }
 
@@ -35,7 +47,7 @@ else {
 
 
 
-console.log('hai fatto' + numeroTenativi[i] + 'tentativi');
+console.log('hai indovinato ' + numeroTenativi.length + ' numeri');
 
 
 function generaRandom(min, max) {
