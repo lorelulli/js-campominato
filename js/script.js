@@ -5,7 +5,8 @@
 
 var numeriRandom = [];
 var numeroTenativi = [];
-var larghezzaCampo = 100;
+var larghezzaCampo = dimensioneCampo();
+console.log(larghezzaCampo);
 var bombeDaPiazzare = 16;
 var bandiereDaPiazzare = larghezzaCampo - bombeDaPiazzare ;
 for (var i = 0; i < bombeDaPiazzare; i++) {
@@ -86,6 +87,21 @@ function generaRandom(min, max) {
     return numeroRandom;
 }
 
-function dimensioneNumeri(min, max) {
-
+function dimensioneCampo() {
+    var difficolta = parseInt(prompt('seleziona la difficoltà 1,2,3'));
+switch (difficolta) {
+    case 1:
+        larghezzaCampo = 100
+        break;
+    case 2:
+        larghezzaCampo = 80
+        break;
+    case 3:
+        larghezzaCampo = 50
+        break;
+    
+    default:
+        larghezzaCampo = 100
+}
+return larghezzaCampo;
 }
