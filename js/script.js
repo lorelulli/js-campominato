@@ -5,16 +5,21 @@
 
 var numeriRandom = [];
 var numeroTenativi = [];
+var larghezzaCampo = 100;
+var bombeDaPiazzare = 16;
+var bandiereDaPiazzare = larghezzaCampo - bombeDaPiazzare ;
+for (var i = 0; i < bombeDaPiazzare; i++) {
+var numeroRandom = numeriRandom.push(generaRandom(1,100));
 
-for (var i = 0; i < 16; i++) {
-var numeroRandom = numeriRandom.push(generaRandom(1,100))
 
 }
+console.log(numeriRandom.length);
 console.log(numeriRandom);
+console.log(bandiereDaPiazzare);
 
 
+while (numeroTenativi.length < bandiereDaPiazzare) {
 
-for (var i = 0; i < 10; i++) {
 var tentativo = parseInt(prompt('scrivi un numero da 1 a 100'));
 
 console.log(numeroTenativi);
@@ -29,10 +34,20 @@ if (!numeriRandom.includes(tentativo)) {
         if (!isNaN(tentativo)) {
 
             if (tentativo < 101 && tentativo >= 1) {
-
-
                 console.log('scegli altro numero');
                 numeroTenativi.push(tentativo);
+
+
+
+
+                if (numeroTenativi.length === bandiereDaPiazzare) {
+                    console.log('complimenti hai vinto');
+
+
+                }
+
+
+
             }
             else {
 
@@ -69,4 +84,8 @@ console.log('hai indovinato ' + numeroTenativi.length + ' numeri');
 function generaRandom(min, max) {
     numeroRandom = Math.floor(Math.random() * (max - min + 1)) + min;
     return numeroRandom;
+}
+
+function dimensioneNumeri(min, max) {
+
 }
